@@ -14,7 +14,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("test")
+
+        helloLabel.textColor = UIColor(hue: 0, saturation: 0, brightness: 0, alpha: CGFloat(slider.value));
     }
 
 
@@ -27,8 +28,6 @@ class ViewController: UIViewController {
     // MARK: - Interactions
 
     @IBAction func dragSlider(_ sender: UISlider) {
-        print("slide")
-        print("\(sender.value)")
         helloLabel.textColor = UIColor(hue: 0, saturation: 0, brightness: 0, alpha: CGFloat(sender.value));
     }
 }
