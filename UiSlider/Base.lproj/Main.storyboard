@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,16 +23,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="6s0-4s-pOu">
-                                <rect key="frame" x="120" y="261.5" width="135.5" height="144"/>
+                                <rect key="frame" x="32" y="261.5" width="311" height="144"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXE-Df-pyi">
-                                        <rect key="frame" x="0.0" y="0.0" width="135.5" height="60"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXE-Df-pyi">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="b2d-1X-apb">
-                                        <rect key="frame" x="-2" y="114" width="139.5" height="31"/>
+                                        <rect key="frame" x="-2" y="114" width="315" height="31"/>
+                                        <color key="minimumTrackTintColor" white="0.83995535714285718" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="maximumTrackTintColor" white="0.42477678571428573" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="thumbTintColor" white="0.75789620535714286" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="drag2:" destination="BYZ-38-t0r" eventType="touchDragExit" id="rFr-8n-Okt"/>
+                                            <action selector="dragSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="jSx-x0-DcT"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                             </stackView>
@@ -39,9 +47,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6s0-4s-pOu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4JR-xK-dDC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6s0-4s-pOu" secondAttribute="trailing" constant="16" id="h6a-x7-7Fk"/>
                             <constraint firstItem="6s0-4s-pOu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hk8-BE-Ztk"/>
+                            <constraint firstItem="6s0-4s-pOu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="yoE-lE-u75"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="helloLabel" destination="vXE-Df-pyi" id="3Gt-DT-gjy"/>
+                        <outlet property="slider" destination="b2d-1X-apb" id="36D-P3-XS1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
